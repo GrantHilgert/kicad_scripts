@@ -3,6 +3,10 @@ import sys
 import math
 
 
+# This script processes a .kicad_pcb file and generates a report.csv file of the routing length of each net
+# My primary use case for this script is for high speed differntial pair trace length matching.
+
+
 
 def print_status(message,status):
 	if status == 1:
@@ -24,7 +28,7 @@ try:
 	open_flag=0
 except:
 	print(Fore.RED + "Error Opening board file: " + str(board_file_name) + Style.RESET_ALL)
-	print("Usage: python3 trace_length_by_net.py <board_file.kicad_pcb")
+	print("Usage: python3 trace_length_by_net.py <board_file.kicad_pcb>")
 
 
 net_list=[]
